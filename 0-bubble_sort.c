@@ -33,27 +33,27 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i = 0;
 	size_t j;
-	int swapped;
+	bool swapped;
 
 	if (size < 2)
 		return;
 
 	while (i < size - 1)
 	{
-		swapped = 0;
+		swapped = false;
 		for (j = 0; j < size - i - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
 				swap(&array[j], &array[j + 1]);
 				print_array(array, size);
-				swapped = 1;
+				swapped = true;
 			}
 		}
 		i++;
 
 		/*This checks if everything has been sorted in the current pass */
-		if (swapped == 0)
+		if (swapped == false)
 			break;
 	}
 }
